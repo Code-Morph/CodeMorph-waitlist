@@ -23,7 +23,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-6">Our Story</h2>
               <p className="text-zinc-400 mb-4">
-                CodeMorph was founded in 2022 by a team of developers who experienced firsthand the challenges of
+                CodeMorph was founded in 2023 by a  of developers who experienced firsthand the challenges of
                 migrating large codebases between programming languages. After spending months manually converting a
                 legacy application, they realized there had to be a better way.
               </p>

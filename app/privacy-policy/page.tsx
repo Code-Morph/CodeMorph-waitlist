@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
               </div>
               <div>
                 <p className="text-sm text-zinc-400">Last Updated</p>
-                <p className="font-medium">May 15, 2023</p>
+                <p className="font-medium">February 25, 2025</p>
               </div>
             </div>
 
@@ -215,7 +215,7 @@ export default function PrivacyPolicyPage() {
             <p className="text-zinc-400 mb-4">
               If you have any questions or concerns about this privacy policy, please contact us at:
             </p>
-            <p className="text-lg font-medium">privacy@codemorph.ai</p>
+            <p className="text-lg font-medium">codemorph01@gmail.com</p>
           </div>
         </div>
       </section>
