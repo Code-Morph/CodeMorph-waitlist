@@ -23,7 +23,7 @@ const testimonials = [
   {
     quote:
       "We've reduced our code migration costs by 70% while improving quality. CodeMorph is a game-changer for our team.",
-    author: "Tonylon",
+    author: "Tose Anthony",
     role: "Software Engineering, LedihTech",
     avatar: "/tony.jpg",
   },
