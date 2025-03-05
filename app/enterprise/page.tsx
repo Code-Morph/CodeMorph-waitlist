@@ -26,59 +26,70 @@ export default function EnterprisePage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-   // Handle text input changes
-   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  // Handle text input changes
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
-  
-    // Handle form submission
-    const handleSubmit = async (e: React.FormEvent) => {
-      e.preventDefault();
-      setIsSubmitting(true);
-    
-      try {
-        const response = await fetch("https://codemorph-waitlist-backend.onrender.com/enterpriseWaitlist/", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
-  
-        const data = await response.json();
-    
-        if (!response.ok) {
-          throw new Error(data.error || "Something went wrong. Please try again.");
-        }
-    
-        setFormData({
-          fullName: "",
-          email: "",
-          companyName: "",
-          companySize: "",
-          useCase: "",
-        });
 
-        toast({
-          title: "Thanks for your interest!",
-          description: "We've received your submission and will be in touch soon.",
-        });     
-      } catch (error: any) {
-        toast({
-          title: "Error",
-          description: error.message || "An unexpected error occurred.",
-          variant: "destructive",
-        });
-      } finally {
-        setIsSubmitting(false);
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://codemorph-waitlist-backend.onrender.com/enterpriseWaitlist/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Something went wrong. Please try again.");
       }
-    };
-  
+
+      setFormData({
+        fullName: "",
+        email: "",
+        companyName: "",
+        companySize: "",
+        useCase: "",
+      });
+
+      toast({
+        title: "Thanks for your interest!",
+        description: "We've received your submission and will be in touch soon.",
+      });
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message || "An unexpected error occurred.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-black to-zinc-900 text-white">
-       <Toaster />
-       
+      <Toaster />
+
       <PageHeader
         title="Enterprise Solutions"
         description="Powerful code transformation tools designed for the needs of large organizations."
@@ -142,13 +153,13 @@ export default function EnterprisePage() {
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">
                       Full Name
-                    </label> 
-                    <Input 
-                      id="fullName" 
+                    </label>
+                    <Input
+                      id="fullName"
                       name='fullName'
-                      className="bg-zinc-800/50 border-zinc-700" 
-                      placeholder="Your name" 
-                      value={formData.fullName} 
+                      className="bg-zinc-800/50 border-zinc-700"
+                      placeholder="Your name"
+                      value={formData.fullName}
                       onChange={handleChange}
                       required
                     />
@@ -175,13 +186,13 @@ export default function EnterprisePage() {
                     <label htmlFor="companyName" className="text-sm font-medium">
                       Company
                     </label>
-                    <Input 
-                      id="companyName" 
+                    <Input
+                      id="companyName"
                       name='companyName'
-                      className="bg-zinc-800/50 border-zinc-700" 
-                      placeholder="Company name" 
-                      value={formData.companyName} 
-                      onChange={handleChange} 
+                      className="bg-zinc-800/50 border-zinc-700"
+                      placeholder="Company name"
+                      value={formData.companyName}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -189,13 +200,13 @@ export default function EnterprisePage() {
                     <label htmlFor="title" className="text-sm font-medium">
                       Company Size
                     </label>
-                    <Input 
-                      id="companySize" 
+                    <Input
+                      id="companySize"
                       name='companySize'
-                      className="bg-zinc-800/50 border-zinc-700" 
-                      placeholder="1-10 employees" 
-                      value={formData.companySize} 
-                      onChange={handleChange} 
+                      className="bg-zinc-800/50 border-zinc-700"
+                      placeholder="1-10 employees"
+                      value={formData.companySize}
+                      onChange={handleChange}
                       required
                     />
                   </div>

@@ -16,8 +16,18 @@ export default function Hero() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
-    if (!email || !email.includes("@")) {
+
+    // if (!email || !email.includes("@")) {
+    //   toast({
+    //     title: "Invalid email",
+    //     description: "Please enter a valid email address.",
+    //     variant: "destructive",
+    //   });
+    //   return;
+    // }
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email)) {
       toast({
         title: "Invalid email",
         description: "Please enter a valid email address.",
@@ -25,9 +35,9 @@ export default function Hero() {
       });
       return;
     }
-  
+
     setIsSubmitting(true);
-  
+
     try {
       const response = await fetch("https://codemorph-waitlist-backend.onrender.com/userWaitlist/", {
         method: "POST",
@@ -36,19 +46,19 @@ export default function Hero() {
         },
         body: JSON.stringify({ email }),
       });
-  
+
       const data = await response.json();
-  
+
       if (!response.ok) {
         throw new Error(data.error || "Something went wrong. Please try again.");
       }
-  
+
       setEmail(""); // Reset email input
       toast({
         title: "Success!",
         description: "You've been added to our waitlist. We'll be in touch soon!",
       });
-  
+
     } catch (error: any) {
       toast({
         title: "Error",
@@ -59,7 +69,7 @@ export default function Hero() {
       setIsSubmitting(false);
     }
   };
-  
+
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20 overflow-hidden">
@@ -95,7 +105,7 @@ export default function Hero() {
           >
             {
               ["const", "async", "function", "import", "export", "class", "=>", "await", "</>", "[]", "{}"][
-                Math.floor(Math.random() * 11)
+              Math.floor(Math.random() * 11)
               ]
             }
           </motion.div>
