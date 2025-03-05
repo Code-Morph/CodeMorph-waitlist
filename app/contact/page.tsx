@@ -282,11 +282,11 @@ export default function ContactPage() {
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
-                    <span>
+                    <span className="flex items-center gap-2">
                       Sending Message <Send className="w-4 h-4 ml-2" />
                     </span>
                   ) : (
-                    <span>
+                    <span className="flex items-center gap-2">
                       Send Message <Send className="w-4 h-4 ml-2" />
                     </span>
                   )}
