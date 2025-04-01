@@ -1,7 +1,7 @@
 import PageHeader from "@/components/page-header"
 import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
-import { Code, Zap, Users, Globe, ArrowRight, Lightbulb, Target, Rocket } from "lucide-react"
+import { Code, Zap, Users, Globe, ArrowRight, Lightbulb, Target, Rocket, Figma } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
@@ -101,6 +101,17 @@ export default function AboutPage() {
 
               <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-xl p-6">
                 <div className="mb-4 p-3 bg-zinc-800/50 rounded-lg w-fit">
+                  <Figma className="w-6 h-6 text-emerald-400" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Design to Code</h3>
+                <p className="text-zinc-400">
+                  Bridging the gap between design and development, CodeMorph's Figma integration transforms UI designs
+                  into functional code, enabling seamless collaboration between designers and developers.
+                </p>
+              </div>
+
+              <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-xl p-6">
+                <div className="mb-4 p-3 bg-zinc-800/50 rounded-lg w-fit">
                   <Zap className="w-6 h-6 text-emerald-400" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Evolving Technology</h3>
@@ -183,11 +194,11 @@ export default function AboutPage() {
                   Join Our Team <Users className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
-              <Button variant="outline" className="border-emerald-500 text-emerald-400 hover:bg-emerald-500/10" asChild>
+              {/* <Button variant="outline" className="border-emerald-500 text-emerald-400 hover:bg-emerald-500/10" asChild>
                 <Link href="/">
                   Try CodeMorph <Globe className="w-4 h-4 ml-2" />
                 </Link>
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
@@ -195,4 +206,3 @@ export default function AboutPage() {
     </main>
   )
 }
-

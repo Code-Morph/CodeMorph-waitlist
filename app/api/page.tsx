@@ -5,6 +5,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
 import { Check, Copy, Key, Lock, Zap, Server, Globe, Shield, Clock, AlertCircle } from "lucide-react"
 import Link from "next/link"
+import { CodeBlock } from "@/components/code-block"
+import { ApiUrl } from "@/components/api-url"
 
 export const metadata: Metadata = {
   title: "API Documentation - CodeMorph",
@@ -140,25 +142,18 @@ export default function ApiPage() {
                     </div>
                   </div>
                 </div>
-                <div className="flex gap-4">
+                {/* <div className="flex gap-4">
                   <Button className="bg-emerald-600 hover:bg-emerald-500">Get API Key</Button>
                   <Button variant="outline" className="border-zinc-700">
                     View SDKs
                   </Button>
-                </div>
+                </div> */}
               </div>
 
               <Card className="bg-zinc-900/50 backdrop-blur-sm border-zinc-800">
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-4">Base URL</h3>
-                  <div className="bg-black/50 rounded-lg p-4 font-mono text-sm mb-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-emerald-400">https://api.codemorph.ai</span>
-                      <Button variant="ghost" size="icon" className="h-6 w-6">
-                        <Copy className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
+                  <ApiUrl />
                   <div className="space-y-3 text-sm text-zinc-400">
                     <div className="flex items-center gap-2">
                       <Server className="w-4 h-4" />
@@ -234,15 +229,7 @@ export default function ApiPage() {
               </TabsList>
               {Object.entries(languageExamples).map(([language, code]) => (
                 <TabsContent key={language} value={language}>
-                  <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-xl p-6">
-                    <div className="bg-black/50 rounded-lg p-4 font-mono text-sm mb-4">
-                      <pre className="text-emerald-400 whitespace-pre-wrap">{code}</pre>
-                    </div>
-                    <Button variant="outline" className="border-zinc-700">
-                      <Copy className="w-4 h-4 mr-2" />
-                      Copy Code
-                    </Button>
-                  </div>
+                  <CodeBlock language={language} code={code} />
                 </TabsContent>
               ))}
             </Tabs>
@@ -291,9 +278,9 @@ export default function ApiPage() {
               <Button asChild>
                 <Link href="/contact">Contact Support</Link>
               </Button>
-              <Button variant="outline" className="border-zinc-700" asChild>
+              {/* <Button variant="outline" className="border-zinc-700" asChild>
                 <Link href="#">View API Reference</Link>
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>

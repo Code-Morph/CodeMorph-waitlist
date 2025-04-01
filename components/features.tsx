@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Code, GitBranch, Zap, RefreshCw, Database, Workflow } from "lucide-react"
+import { Code, GitBranch, Zap, RefreshCw, Database, Workflow, Figma } from "lucide-react"
 
 const features = [
   {
@@ -13,6 +13,11 @@ const features = [
     icon: <GitBranch className="w-6 h-6 text-emerald-400" />,
     title: "Full-Project Migration",
     description: "Not just snippets—CodeMorph handles entire repositories and maintains project structure.",
+  },
+  {
+    icon: <Figma className="w-6 h-6 text-emerald-400" />,
+    title: "Figma to Code Conversion",
+    description: "Import designs from Figma and transform them into functional websites or apps in any programming language.",
   },
   {
     icon: <RefreshCw className="w-6 h-6 text-emerald-400" />,
@@ -80,4 +85,3 @@ export default function Features() {
     </section>
   )
 }
-

@@ -180,7 +180,7 @@ export default function PrivacyPolicyPage() {
                   </li>
                 </ul>
                 <p className="text-zinc-400 mt-4">
-                  To exercise any of these rights, please contact us at privacy@codemorph.ai.
+                  To exercise any of these rights, please contact us at support@codemorph.codes.
                 </p>
               </div>
             </div>
@@ -215,7 +215,7 @@ export default function PrivacyPolicyPage() {
             <p className="text-zinc-400 mb-4">
               If you have any questions or concerns about this privacy policy, please contact us at:
             </p>
-            <p className="text-lg font-medium">codemorph01@gmail.com</p>
+            <p className="text-lg font-medium">support@codemorph.codes</p>
           </div>
         </div>
       </section>

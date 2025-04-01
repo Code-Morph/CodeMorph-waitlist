@@ -330,7 +330,7 @@ export default function EnterprisePage() {
             </div>
           </div>
 
-          <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-xl p-8 mb-24">
+          {/* <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-xl p-8 mb-24">
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Enterprise Success Stories</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -378,7 +378,7 @@ export default function EnterprisePage() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Ready to Transform Your Codebase?</h2>

@@ -26,13 +26,13 @@ const roadmapItems = [
     title: "Enterprise Release",
     description: "Full-featured version with enterprise support",
     status: "upcoming",
-    date: "Q1 2025",
+    date: "Q2 2026",
   },
   {
     title: "API & Integrations",
     description: "Developer API and third-party integrations",
     status: "upcoming",
-    date: "Q2 2026",
+    date: "Q3 2026",
   },
 ]
 
@@ -159,4 +159,3 @@ export default function Roadmap() {
     </section>
   )
 }
-

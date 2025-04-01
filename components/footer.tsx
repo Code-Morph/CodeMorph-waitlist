@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { toast } from "@/components/ui/use-toast"
 import { Toaster } from "@/components/ui/toaster"
-import { ArrowRight, Github, Linkedin, Twitter, Bot } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Twitter, Bot, Instagram } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 import Logo from "@/components/ui/logo"
@@ -193,14 +193,15 @@ export default function Footer() {
               <Twitter className="w-5 h-5" />
               <span className="sr-only">Twitter</span>
             </Link>
+            <Link href="https://www.instagram.com/_codemorph" target='_blank' className="text-zinc-400 hover:text-emerald-400 transition-colors">
+              <Instagram className="w-5 h-5" />
+              <span className="sr-only">Instagram</span>
+            </Link>
             <Link href="https://www.reddit.com/user/CodeMorph_/" target='_blank' className="text-zinc-400 hover:text-emerald-400 transition-colors">
               <Bot className="w-5 h-5" />
               <span className="sr-only">Reddit</span>
             </Link>
-            {/* <Link href="#" className="text-zinc-400 hover:text-emerald-400 transition-colors">
-              <Github className="w-5 h-5" />
-              <span className="sr-only">GitHub</span>
-            </Link>
+            {/* 
             <Link href="#" className="text-zinc-400 hover:text-emerald-400 transition-colors">
               <Linkedin className="w-5 h-5" />
               <span className="sr-only">LinkedIn</span>
