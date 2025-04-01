@@ -111,8 +111,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-xl font-semibold mb-1">Email Us</h3>
                     <p className="text-zinc-400">
-                      <a href="mailto:hello@codemorph.codes" className="hover:text-emerald-400 transition-colors">
-                        hello@codeMorph.codes
+                      <a href="mailto:hello@codemorph.codes" target='_blank' className="hover:text-emerald-400 transition-colors">
+                        hello@codemorph.codes
                       </a>
                     </p>
                   </div>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-xl font-semibold mb-1">Call Us</h3>
                     <p className="text-zinc-400">
-                      <a href="tel:+2349068937365" className="hover:text-emerald-400 transition-colors">
+                      <a href="tel:+2349068937365" target='_blank' className="hover:text-emerald-400 transition-colors">
                         +234 906 893 7365
                       </a>
                     </p>
@@ -133,6 +133,20 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex gap-4">
+                  <div className="p-3 bg-zinc-800/50 rounded-lg h-fit">
+                    <Phone className="w-6 h-6 text-emerald-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-1">Chat With Us</h3>
+                    <p className="text-zinc-400">
+                      <a href="https://wa.me/2349079889747" target='_blank' className="hover:text-emerald-400 transition-colors">
+                        +234 907 988 9747
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                {/* <div className="flex gap-4">
                   <div className="p-3 bg-zinc-800/50 rounded-lg h-fit">
                     <MapPin className="w-6 h-6 text-emerald-400" />
                   </div>
@@ -142,7 +156,7 @@ export default function ContactPage() {
                       Lagos, Nigeria                      
                     </p>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex gap-4">
                   <div className="p-3 bg-zinc-800/50 rounded-lg h-fit">
