@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Mail, MessageSquare, MapPin, Phone, Globe, Send, Twitter, Bot, Instagram } from "lucide-react"
+import { Mail, MessagesSquare, MapPin, Phone, Globe, Send, Twitter, Bot, Instagram } from "lucide-react"
 import { useState } from "react"
 import { toast } from "@/components/ui/use-toast"
 import { Toaster } from "@/components/ui/toaster"
@@ -134,7 +134,7 @@ export default function ContactPage() {
 
                 <div className="flex gap-4">
                   <div className="p-3 bg-zinc-800/50 rounded-lg h-fit">
-                    <Phone className="w-6 h-6 text-emerald-400" />
+                    <MessagesSquare className="w-6 h-6 text-emerald-400" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-1">Chat With Us</h3>
